@@ -3,8 +3,8 @@ import useGoogleSheetData from '../../services/useGoogleSheetData';
 import { Link } from 'react-router';
 
 const LandingPage = () => {
-  const { data: landingData, error: landingError } = useGoogleSheetData("LANDINGPAGE", "A1:F100");
-  const { data: featuredData, error: featuredError } = useGoogleSheetData("FEATUREDPAGE", "A1:F100");
+  const { data: landingData, error: landingError } = useGoogleSheetData("LANDINGPAGE", "A1:G100");
+  const { data: featuredData, error: featuredError } = useGoogleSheetData("FEATUREDPAGE", "A1:G100");
 
   if (landingError || featuredError) return <p>Error loading content.</p>;
   if (!landingData || !featuredData) return <p>Loading...</p>;
@@ -13,7 +13,7 @@ const LandingPage = () => {
   const mainHeading = featuredData[0]?.['MAINHEADING'] || "Featured Products";
 
   return (
-    <div className="pt-24">
+    <div className="pt-16">
       {/* Hero Section */}
       <section
         className="min-h-screen bg-cover bg-center bg-no-repeat relative"
@@ -23,12 +23,20 @@ const LandingPage = () => {
           <div className="text-center text-white px-4 md:px-6">
             <h1 className="text-3xl md:text-6xl font-bold mb-4">{landingContent.HEADING}</h1>
             <p className="text-base md:text-lg mb-6">{landingContent.PARAGRAPH}</p>
+            <div className=''>
             <Link
               to="/shop"
-              className="bg-[#BD701A] px-6 py-3 text-base md:text-lg rounded-lg font-bold hover:bg-blue-800 transition cursor-pointer inline-block"
+              className="bg-[#BD701A] px-6 py-3 text-base md:text-lg rounded-lg font-bold hover:bg-[#3b3227] transition cursor-pointer inline-block mr-10"
             >
               {landingContent.BUTTON || "Shop Now"}
             </Link>
+            <Link
+              to="/about"
+              className="bg-white px-6 py-3 text-black text-base md:text-lg rounded-lg font-bold hover:bg-[#BD701A] transition cursor-pointer inline-block"
+            >
+              {landingContent.BUTTON2 || "Learn More"}
+            </Link> 
+            </div>
           </div>
         </div>
       </section>

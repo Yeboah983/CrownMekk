@@ -14,6 +14,7 @@ import Overview from "./pages/dashboard/Overview";
 import CreateAd from "./pages/dashboard/CreateAd";
 import EditAd from "./pages/dashboard/EditAd";
 import VendorAds from "./pages/dashboard/VendorAds";
+import BlogDetail from "./pages/auth/BlogDetail";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="shop" element={<Shop />} />
           <Route path="shop/:id" element={<Singlead />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
         </Route>
