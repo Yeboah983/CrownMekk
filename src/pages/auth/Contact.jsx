@@ -34,7 +34,7 @@ const Contact = () => {
     <div className="flex flex-col px-4 py-10 lg:px-10">
       {/* Intro */}
       <div className="flex flex-col items-center text-center pb-10">
-        <h1 className="text-4xl font-bold text-[#BD701A] mb-2">Contact Us</h1>
+        <h1 className="text-4xl font-bold text-[#BD701A] mb-2 pt-12">Contact Us</h1>
         <p className="text-[#727272] mb-1">Have any questions or feedback? We’d love to hear from you.</p>
         <p className="text-sm text-[#727272] font-medium">Available everyday – 24/7</p>
       </div>

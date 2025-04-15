@@ -16,7 +16,7 @@ const FilterPage = ({ products, categories }) => {
   });
 
   return (
-    <div className="p-10 max-w-full mx-auto">
+    <div className="px-4 sm:px-6 md:px-10 py-10 w-full mx-auto">
       <div className="text-center mb-8">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-2 pt-5 text-[#a65a14]">
           Products
@@ -32,7 +32,7 @@ const FilterPage = ({ products, categories }) => {
         onSearchChange={setSearchQuery}
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product, index) => (
             <ProductCard key={product.ID || index} product={product} />
