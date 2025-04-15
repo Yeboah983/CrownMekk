@@ -18,7 +18,7 @@ const AboutCarousel = ({ images }) => {
         {/* Left Arrow */}
         <button
           onClick={() => scroll('left')}
-          className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white text-[#BD701A] p-2 rounded-full shadow hover:bg-[#a65a14] hover:text-white transition"
+          className="flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white text-[#BD701A] p-2 rounded-full shadow hover:bg-[#a65a14] hover:text-white transition"
         >
           &#8592;
         </button>
@@ -45,7 +45,7 @@ const AboutCarousel = ({ images }) => {
         {/* Right Arrow */}
         <button
           onClick={() => scroll('right')}
-          className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-[#BD701A] p-2 rounded-full shadow hover:bg-[#a65a14] hover:text-white transition"
+          className="flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-[#BD701A] p-2 rounded-full shadow hover:bg-[#a65a14] hover:text-white transition"
         >
           &#8594;
         </button>

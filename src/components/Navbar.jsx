@@ -14,16 +14,25 @@ const Navbar = () => {
 
         {/* Hamburger Button */}
         <div className="block md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="flex items-center px-3 py-2 border rounded text-[#BD701A] border-[#BD701A] hover:text-[#2b2217] hover:border-[#2b2217]"
-          >
-            <svg className="fill-current h-4 w-4" viewBox="0 0 20 20">
-              <title>Menu</title>
-              <path d="M0 3h20v2H0zM0 9h20v2H0zM0 15h20v2H0z" />
-            </svg>
-          </button>
-        </div>
+  <button
+    onClick={toggleMenu}
+    className="flex items-center px-3 py-2 border rounded text-[#BD701A] border-[#BD701A] hover:text-[#2b2217] hover:border-[#2b2217]"
+  >
+    {isMenuOpen ? (
+      // Close Icon
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <title>Close</title>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    ) : (
+      // Hamburger Icon
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    )}
+  </button>
+</div>
 
         {/* Menu Links */}
         <div
