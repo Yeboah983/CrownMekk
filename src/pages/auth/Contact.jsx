@@ -1,8 +1,8 @@
-import { LucidePhoneCall } from "lucide-react";
 import React, { useState } from "react";
+import { Link } from "react-router";
+import { LucidePhoneCall } from "lucide-react";
 import { FaFacebookF, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
 import { FaLinkedin, FaTiktok } from "react-icons/fa6";
-import { Link } from "react-router";
 import { MdOutlineLocationOn, MdOutlineMail } from "react-icons/md";
 
 const Contact = () => {
@@ -24,106 +24,76 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const { firstName, lastName, email, phone, message } = formData;
     const fullMessage = `Hello, my name is ${firstName} ${lastName}. Email: ${email}, Phone: ${phone}. Message: ${message}`;
-
-    const whatsappURL = `https://wa.me/233505762889?text=${encodeURIComponent(
-      fullMessage
-    )}`;
+    const whatsappURL = `https://wa.me/233505762889?text=${encodeURIComponent(fullMessage)}`;
     window.open(whatsappURL, "_blank");
   };
 
   return (
-    <div className="flex flex-col p-10">
-      <div className="flex flex-col items-center justify-around gap-3 pb-5">
-        <h1 className="font-bold text-[#BD701A] text-3xl">Get in Touch</h1>
-        <p className="text-[#727272]">
-          "Have any questions or feedback? We’d love to hear from you."
-        </p>
+    <div className="flex flex-col px-4 py-10 lg:px-10">
+      {/* Intro */}
+      <div className="flex flex-col items-center text-center pb-10">
+        <h1 className="text-4xl font-bold text-[#BD701A] mb-2">Contact Us</h1>
+        <p className="text-[#727272] mb-1">Have any questions or feedback? We’d love to hear from you.</p>
+        <p className="text-sm text-[#727272] font-medium">Available everyday – 24/7</p>
       </div>
 
-      <div className="flex flex-col lg:flex-row">
+      {/* Main layout */}
+      <div className="flex flex-col lg:flex-row gap-8">
         {/* Contact Info */}
-        <div className="w-full lg:w-[35vw] flex flex-col justify-between bg-[#BD701A] text-white p-10">
-          <h3 className="font-bold text-black text-2xl mb-6">
-            Contact Information
-          </h3>
-          <div className="flex flex-col gap-6">
-            <p className="flex gap-4 items-center">
+        <div className="w-full lg:w-[35vw] bg-[#BD701A] text-white p-8 rounded-lg flex flex-col justify-between">
+          <h3 className="font-bold text-black text-2xl mb-6">Contact Information</h3>
+
+          <div className="flex flex-col gap-6 text-sm">
+            <p className="flex gap-2 items-start">
               <LucidePhoneCall />
               <span>(+233) 505762889 / 249969499</span>
             </p>
-            <p className="flex items-center gap-4">
-              <MdOutlineMail className="text-2xl" />
+            <p className="flex items-start gap-2">
+              <MdOutlineMail className="text-xl" />
               <a
                 href="mailto:Millyedem25@gmail.com"
-                className="text-white hover:text-green-400 underline"
+                className="text-white underline hover:text-green-200"
               >
                 Millyedem25@gmail.com
               </a>
             </p>
-            <p className="flex items-center gap-4">
-              <MdOutlineLocationOn className="text-2xl" />
+            <p className="flex items-start gap-2">
+              <MdOutlineLocationOn className="text-xl" />
               <span>Ekus Pharmacy, Korle Bu New Station</span>
             </p>
           </div>
-          <div className="flex space-x-4 mt-5">
-            <Link
-              to="https://www.facebook.com/share/15g39RefY8/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-black rounded-full w-8 h-8 flex items-center justify-center hover:bg-[#BD701A]"
-            >
-              <FaFacebookF />
-            </Link>
-            <Link
-              to="https://youtube.com/@findmekk888?si=s8SXgTJAezatS4nn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-black rounded-full w-8 h-8 flex items-center justify-center hover:bg-[#BD701A]"
-            >
-              <FaYoutube />
-            </Link>
-            <Link
-              to="https://www.facebook.com/share/15g39RefY8/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-black rounded-full w-8 h-8 flex items-center justify-center hover:bg-[#BD701A]"
-            >
-              <FaTwitter />
-            </Link>
-            <Link
-              to="https://www.instagram.com/findmekk888?igsh=dDZycjJkZjJjd3Ri"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-black rounded-full w-8 h-8 flex items-center justify-center hover:bg-[#BD701A]"
-            >
-              <FaInstagram />
-            </Link>
-            <Link
-              to="https://www.linkedin.com/in/miss-millicent-edem-091970118?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-black rounded-full w-8 h-8 flex items-center justify-center hover:bg-[#BD701A]"
-            >
-              <FaLinkedin />
-            </Link>
-            <Link
-              to="https://www.tiktok.com/@findmekk888?_t=ZM-8vPtuhbbss3&_r=1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-black rounded-full w-8 h-8 flex items-center justify-center hover:bg-[#BD701A]"
-            >
-              <FaTiktok />
-            </Link>
+
+          <div className="mt-6">
+            <h3 className="font-semibold text-white mb-3">Follow Us</h3>
+            <div className="flex flex-wrap gap-3">
+              <Link to="https://www.facebook.com/share/15g39RefY8/" target="_blank" rel="noreferrer" className="bg-white text-[#BD701A] rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#a65a14] hover:text-white transition">
+                <FaFacebookF />
+              </Link>
+              <Link to="https://youtube.com/@findmekk888" target="_blank" rel="noreferrer" className="bg-white text-[#BD701A] rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#a65a14] hover:text-white transition">
+                <FaYoutube />
+              </Link>
+              <Link to="https://twitter.com" target="_blank" rel="noreferrer" className="bg-white text-[#BD701A] rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#a65a14] hover:text-white transition">
+                <FaTwitter />
+              </Link>
+              <Link to="https://www.instagram.com/findmekk888" target="_blank" rel="noreferrer" className="bg-white text-[#BD701A] rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#a65a14] hover:text-white transition">
+                <FaInstagram />
+              </Link>
+              <Link to="https://www.linkedin.com/in/miss-millicent-edem-091970118" target="_blank" rel="noreferrer" className="bg-white text-[#BD701A] rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#a65a14] hover:text-white transition">
+                <FaLinkedin />
+              </Link>
+              <Link to="https://www.tiktok.com/@findmekk888" target="_blank" rel="noreferrer" className="bg-white text-[#BD701A] rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#a65a14] hover:text-white transition">
+                <FaTiktok />
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Form Section */}
-        <div className="w-full lg:w-[65vw] p-10">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-10">
-            <div className="flex gap-10 flex-col md:flex-row">
+        {/* Contact Form */}
+        <div className="w-full lg:w-[65vw] p-4">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+            <div className="flex flex-col md:flex-row gap-6">
               <div className="flex flex-col w-full gap-2">
                 <label>First Name</label>
                 <input
@@ -148,7 +118,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="flex gap-10 flex-col md:flex-row">
+            <div className="flex flex-col md:flex-row gap-6">
               <div className="flex flex-col w-full gap-2">
                 <label>Email</label>
                 <input
@@ -188,7 +158,7 @@ const Contact = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="bg-black text-white px-12 py-3 rounded-md hover:bg-green-700 transition"
+                className="bg-[#BD701A] text-white px-12 py-3 rounded-md hover:bg-[#a65a14] transition"
               >
                 Send Message
               </button>
