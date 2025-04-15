@@ -1,7 +1,7 @@
 import React from "react";
 
 const ProductCard = ({ product }) => (
-  <div className="bg-[#f0c89c] rounded-2xl overflow-hidden shadow-md">
+  <div className="bg-[#f0c89c] rounded-2xl overflow-hidden shadow-md w-full">
     {/* Top Image */}
     <img
       src={product.IMAGEURL}
