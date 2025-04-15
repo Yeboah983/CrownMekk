@@ -3,8 +3,8 @@ import React from 'react';
 const FilterControls = ({ categories, selectedCategory, onCategoryChange, searchQuery, onSearchChange }) => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
-      {/* Categories */}
-      <div className="flex flex-wrap gap-3">
+      {/* Categories - hidden on mobile */}
+      <div className="hidden md:flex flex-wrap gap-3">
         {categories.map((cat) => (
           <button
             key={cat}
