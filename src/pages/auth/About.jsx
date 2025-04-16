@@ -3,7 +3,6 @@ import useGoogleSheetData from '../../services/useGoogleSheetData';
 import { Link } from 'react-router';
 import AboutCarousel from "../../components/AboutCarousel";
 
-
 const About = () => {
   const { data: aboutData } = useGoogleSheetData("ABOUTUS", "A1:D100");
   const { data: productData } = useGoogleSheetData("ABOUTPRODUCT", "A1:D100");
@@ -11,7 +10,7 @@ const About = () => {
   const defaultContent = { HEADLINE: '', PARAGRAPH: '', CTA: '', BGURL: '' };
   const about = aboutData && aboutData.length > 0 ? aboutData[0] : defaultContent;
   const products = productData || [];
-  const carouselImages = products.slice(1); // Get all except the first for carousel
+  const carouselImages = products.slice(1);
 
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -21,27 +20,32 @@ const About = () => {
   return (
     <>
       {/* HERO SECTION */}
-      <div
-        className={`min-h-screen bg-cover bg-center flex items-center justify-center px-6 py-16 text-white transition-opacity duration-1000 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
-        style={{
-          backgroundImage: `url(${
-            about.BGURL?.includes("drive.google.com")
-              ? `https://drive.google.com/uc?export=view&id=${about.BGURL.match(/\/d\/(.+?)\//)?.[1]}`
-              : about.BGURL
-          })`,
-        }}
-      >
-        <div className="bg-transparent bg-opacity-1 p-8 rounded-2xl text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">{about.HEADLINE}</h1>
-          <p className="text-base md:text-lg mb-6">{about.PARAGRAPH}</p>
-          <Link
-            to="/shop"
-            className="inline-block bg-[#BD701A] text-black px-6 py-3 rounded-xl text-sm font-semibold hover:bg-gray-200 transition"
-          >
-            {about.CTA || "Shop Now"}
-          </Link>
+      <div className={`h-screen relative flex flex-col transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        {/* Top Half - Image (40% height) */}
+        <div className="w-full h-[60vh]">
+          <img
+            src={
+              about.BGURL?.includes("drive.google.com")
+                ? `https://drive.google.com/uc?export=view&id=${about.BGURL.match(/\/d\/(.+?)\//)?.[1]}`
+                : about.BGURL
+            }
+            alt="Hero"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Bottom Half - Text (60% height) */}
+        <div className="h-[60vh] w-full flex items-center justify-center px-6 py-8 bg-[#6d4d29] text-white">
+          <div className="text-center max-w-2xl">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">{about.HEADLINE}</h1>
+            <p className="text-base md:text-lg mb-6">{about.PARAGRAPH}</p>
+            <Link
+              to="/shop"
+              className="inline-block bg-[#BD701A] text-black px-6 py-3 rounded-xl text-sm font-semibold hover:bg-gray-200 transition"
+            >
+              {about.CTA || "Shop Now"}
+            </Link>
+          </div>
         </div>
       </div>
 
