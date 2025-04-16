@@ -19,54 +19,68 @@ const About = () => {
 
   return (
     <>
-      {/* HERO SECTION */}
-      <div className={`h-screen relative flex flex-col transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-        {/* Top Half - Image (40% height) */}
-        <div className="w-full h-[60vh]">
-          <img
-            src={
-              about.BGURL?.includes("drive.google.com")
-                ? `https://drive.google.com/uc?export=view&id=${about.BGURL.match(/\/d\/(.+?)\//)?.[1]}`
-                : about.BGURL
-            }
-            alt="Hero"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {/* HERO SECTION with Overlay and Text on Image */}
+<div className={`relative w-full h-[350px] md:h-[500px] transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src={
+        about.BGURL?.includes("drive.google.com")
+          ? `https://drive.google.com/uc?export=view&id=${about.BGURL.match(/\/d\/(.+?)\//)?.[1]}`
+          : about.BGURL
+      }
+      alt="Hero"
+      className="w-full h-full object-cover"
+    />
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-black opacity-60"></div>
+  </div>
 
-        {/* Bottom Half - Text (60% height) */}
-        <div className="h-[60vh] w-full flex items-center justify-center px-6 py-8 bg-[#6d4d29] text-white">
-          <div className="text-center max-w-2xl">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">{about.HEADLINE}</h1>
-            <p className="text-base md:text-lg mb-6">{about.PARAGRAPH}</p>
-            <Link
-              to="/shop"
-              className="inline-block bg-[#BD701A] text-black px-6 py-3 rounded-xl text-sm font-semibold hover:bg-gray-200 transition"
-            >
-              {about.CTA || "Shop Now"}
-            </Link>
-          </div>
-        </div>
-      </div>
+  {/* Text on Top */}
+  <div className="relative z-10 flex flex-col justify-center items-center h-full px-6 text-white text-center">
+    <h1 className="text-3xl pt-10 md:text-5xl font-bold mb-4">{about.HEADLINE}</h1>
+    <p className="text-base md:text-lg max-w-2xl mb-6">{about.PARAGRAPH}</p>
+    <Link
+      to="/shop"
+      className="bg-[#BD701A] text-black px-6 py-3 rounded-xl text-sm font-semibold hover:bg-white transition"
+    >
+      {about.CTA || "Shop Now"}
+    </Link>
+  </div>
+</div>
+
 
       {/* ABOUT PRODUCT SECTION */}
       {products.length > 0 && (
-        <section className="py-16 px-6 bg-white text-black">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
-            <div className="w-full md:w-1/2">
-              <img
-                src={products[0].IMAGEURL}
-                alt={products[0].TITLE}
-                className="w-full max-h-[500px] object-contain rounded-lg shadow-md transform transition duration-300 hover:scale-105"
-              />
-            </div>
-            <div className="w-full md:w-1/2 flex flex-col justify-center">
-              <h2 className="text-3xl font-bold mb-4">{products[0].TITLE}</h2>
-              <p className="text-lg leading-relaxed">{products[0].SUMMARY}</p>
-            </div>
+  <section className="py-16 px-6 bg-white text-black">
+    <div className="max-w-6xl mx-auto flex flex-col gap-8">
+
+      {/* Title Centered at the Top */}
+      <h2 className="text-3xl font-bold text-center">{products[0].TITLE}</h2>
+
+      {/* Content Layout */}
+      <div className="flex flex-col md:flex-row gap-8 items-center">
+        
+        {/* Image */}
+        <div className="w-full md:w-1/2">
+          <div className="rounded-xl overflow-hidden shadow-md">
+            <img
+              src={products[0].IMAGEURL}
+              alt={products[0].TITLE}
+              className="w-full h-[350px] object-cover transition duration-300 hover:scale-105"
+            />
           </div>
-        </section>
-      )}
+        </div>
+
+        {/* Text */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center">
+          <p className="text-lg leading-loose">{products[0].SUMMARY}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
 
       {/* IMAGE CAROUSEL */}
       {carouselImages.length > 0 && (
