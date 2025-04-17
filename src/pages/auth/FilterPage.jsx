@@ -18,10 +18,10 @@ const FilterPage = ({ products, categories }) => {
   return (
     <div className="px-4 sm:px-6 md:px-10 py-10 w-full mx-auto">
       <div className="text-center mb-8">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-2 pt-5 text-[#a65a14]">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-2 pt-5 text-[#5C3C53]">
           Products
         </h1>
-        <div className="w-20 h-1 bg-[#BD701A] mx-auto rounded"></div>
+        <div className="w-20 h-1 bg-[#5C3C53] mx-auto rounded"></div>
       </div>
 
       <FilterControls

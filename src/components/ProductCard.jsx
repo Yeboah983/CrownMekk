@@ -21,15 +21,15 @@ const ProductCard = ({ product }) => {
 
       {/* White Content Area */}
       <div className="bg-white p-4 flex flex-col items-center text-center rounded-b-2xl">
-        <h3 className="text-lg font-semibold text-gray-800 mb-1">
+        <h3 className="text-lg font-semibold text-[#5C3C53] mb-1">
           {product.PRODUCTNAME}
         </h3>
 
-        <p className="text-sm text-gray-600 mb-3">
+        <p className="text-sm text-[#41562B] mb-3">
           {product.PRODUCTDESCRIPTION}
         </p>
 
-        <span className="text-[#BD701A] font-bold text-base mb-3">
+        <span className="text-[#85582F] font-bold text-base mb-3">
           ${product.PRICE}
         </span>
 
@@ -38,7 +38,7 @@ const ProductCard = ({ product }) => {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#BD701A] text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#a65a14] transition"
+            className="bg-[#5C3C53] text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#380b2b] transition"
           >
             {product.CTA}
           </a>
