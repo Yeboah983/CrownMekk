@@ -39,7 +39,7 @@ const About = () => {
   {/* Text on Top */}
   <div className="relative z-10 flex flex-col justify-center items-center h-full px-6 text-white text-center">
     <h1 className="text-3xl pt-10 md:text-5xl font-bold mb-4">{about.HEADLINE}</h1>
-    <p className="text-base md:text-lg max-w-2xl mb-6">{about.PARAGRAPH}</p>
+    <p className="text-base md:text-lg max-w-2xl mb-6 ]">{about.PARAGRAPH}</p>
     <Link
       to="/shop"
       className="bg-[#BD701A] text-black px-6 py-3 rounded-xl text-sm font-semibold hover:bg-white transition"
@@ -52,7 +52,7 @@ const About = () => {
 
       {/* ABOUT PRODUCT SECTION */}
       {products.length > 0 && (
-  <section className="py-16 px-6 bg-white text-black">
+  <section className="py-16 px-6 bg-[#F5EDE0] text-[#5C3C53]">
     <div className="max-w-6xl mx-auto flex flex-col gap-8">
 
       {/* Title Centered at the Top */}
@@ -74,7 +74,7 @@ const About = () => {
 
         {/* Text */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
-          <p className="text-lg leading-loose">{products[0].SUMMARY}</p>
+          <p className="text-lg text-[#41562A] leading-loose">{products[0].SUMMARY}</p>
         </div>
       </div>
     </div>
