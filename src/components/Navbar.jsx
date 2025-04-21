@@ -9,7 +9,7 @@ const Navbar = () => {
   const closeMenu = () => setIsMenuOpen(false); // 👈 helper to close menu
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md text-[#85582F] font-medium">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md text-[#5C3A69] font-medium">
       <div className="flex items-center justify-between flex-wrap p-6">
         {/* Logo */}
         <div className="text-xl font-bold">CrownMekk</div>

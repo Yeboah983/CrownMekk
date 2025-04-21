@@ -3,52 +3,82 @@ import React, { useRef } from 'react';
 const AboutCarousel = ({ images }) => {
   const scrollRef = useRef(null);
 
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === 'left' ? -400 : 400;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
+  const validImages = images || [];
+
+  console.log("Carousel images received:", validImages);
 
   return (
-    <section className="bg-[#f0c89c] py-10 px-4">
-      <h3 className="text-2xl font-bold text-center mb-6">Explore More</h3>
+    <section className="bg-[#F3F4F6] py-10 px-4">
+      <h3 className="text-3xl text-[#5C3C53] md:text-4xl font-bold text-center mb-10">Explore More</h3>
 
-      <div className="relative">
-        {/* Left Arrow */}
-        <button
-          onClick={() => scroll('left')}
-          className="flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white text-[#BD701A] p-2 rounded-full shadow hover:bg-[#a65a14] hover:text-white transition"
-        >
-          &#8592;
-        </button>
+      <div className="flex flex-wrap gap-6 justify-center px-1">
+        {(validImages.length ? validImages : [
+          {
+            LOGO: "https://placehold.co/100x100?text=BHB",
+            TITLE: "Sample Product",
+            SUBTITLE: "This is a sample subtitle.",
+            BENEFIT1: "Helps with something useful.",
+            BENEFIT2: "Great for daily use.",
+            BENEFIT3: "Reduces inflammation.",
+            BENEFIT4: "Soothes skin and nerves."
+          }
+        ]).map((item, index) => {
+          const baseBenefits = [
+            item.BENEFIT1 && `✔ ${item.BENEFIT1}`,
+            item.BENEFIT2 && `✔ ${item.BENEFIT2}`
+          ].filter(Boolean);
 
-        {/* Scrollable Container */}
-        <div
-  ref={scrollRef}
-  className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth px-1"
->
-  {images.map((item, index) => (
-    <div
-  key={index}
-  className="min-w-[90%] sm:min-w-[48%] lg:min-w-[32%] snap-start transform transition duration-300 hover:scale-105 flex items-center justify-center h-[400px]" // 👈 Fixed height
->
-  <img
-    src={item.IMAGEURL}
-    alt={`Product ${index + 2}`}
-    className="max-h-full w-auto object-contain"
-  />
-</div>
-  ))}
-</div>
+          const extraBenefits = [
+            item.BENEFIT3 && `✔ ${item.BENEFIT3}`,
+            item.BENEFIT4 && `✔ ${item.BENEFIT4}`
+          ].filter(Boolean);
 
-        {/* Right Arrow */}
-        <button
-          onClick={() => scroll('right')}
-          className="flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-[#BD701A] p-2 rounded-full shadow hover:bg-[#a65a14] hover:text-white transition"
-        >
-          &#8594;
-        </button>
+          return (
+            <div
+              key={index}
+              className="w-full sm:w-[48%] lg:w-[32%] transform transition duration-300 hover:scale-105 flex flex-col items-start justify-start bg-white p-5 rounded-xl shadow min-h-[420px]"
+            >
+              <div className="w-full flex flex-row items-start gap-4 mb-4">
+                <img
+                  src={item.LOGO ? item.LOGO : 'https://placehold.co/100x100?text=BHB'}
+                  alt={`Logo ${index + 1}`}
+                  className="w-16 h-16 object-contain rounded-full"
+                />
+                <div className="flex flex-col justify-center w-full">
+                  <h2 className="text-2xl font-bold text-red-700 mb-1 leading-tight">{item.TITLE || "Missing Title"}</h2>
+                  <p className="text-green-700 text-lg font-medium leading-snug mb-1">{item.SUBTITLE || "Missing Subtitle"}</p>
+                  <hr className="border-t-2 border-green-700 w-full" />
+                </div>
+              </div>
+
+              {baseBenefits.length > 0 && (
+                <div className="text-base text-gray-800 w-full">
+                  <h5 className="font-bold text-black mb-2">What It Does</h5>
+                  {baseBenefits.map((text, i) => (
+                    <p key={i} className="mb-2 leading-snug">{text}</p>
+                  ))}
+                </div>
+              )}
+
+              {item.TITLE === 'Benzura Herbal Balm' && extraBenefits.length > 0 && (
+                <div className="text-base text-gray-800 w-full mt-4">
+                  <h5 className="font-bold text-black mb-2">Skin & Wound Care</h5>
+                  {extraBenefits.map((text, i) => (
+                    <p key={`extra-${i}`} className="mb-2 leading-snug">{text}</p>
+                  ))}
+                </div>
+              )}
+
+              {item.TITLE !== 'Benzura Herbal Balm' && extraBenefits.length > 0 && (
+                <div className="text-base text-gray-800 w-full mt-4">
+                  {extraBenefits.map((text, i) => (
+                    <p key={`extra-${i}`} className="mb-2 leading-snug">{text}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );
