@@ -34,7 +34,7 @@ const Contact = () => {
     <div className="flex flex-col px-4 py-10 lg:px-10 bg-[#F5EDE0]">
       {/* Intro */}
       <div className="flex flex-col items-center text-center pb-10">
-        <h1 className="text-4xl font-bold text-[#5C3C53] mb-2 pt-12">Contact Us</h1>
+        <h1 className="text-2xl font-bold text-[#5C3C53] mb-2 pt-16">Contact Us</h1>
         <p className="text-[#727272] mb-1">Have any questions or feedback? We’d love to hear from you.</p>
         <p className="text-sm text-[#727272] font-medium">Available everyday – 24/7</p>
       </div>
@@ -43,7 +43,7 @@ const Contact = () => {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Contact Info */}
         <div className="w-full lg:w-[35vw] bg-[#5C3C53] text-white p-8 rounded-lg flex flex-col justify-between">
-          <h3 className="font-bold text-black text-2xl mb-6">Contact Information</h3>
+          <h3 className="font-bold text-white text-2xl mb-6">Contact Information</h3>
 
           <div className="flex flex-col gap-6 text-sm">
             <p className="flex gap-2 items-start">
