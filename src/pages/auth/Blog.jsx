@@ -10,8 +10,13 @@ const Blog = () => {
   const content = data && data.length > 0 ? data : [defaultContent];
 
   return (
-    <div className="min-h-screen bg-[#F5EDE0] py-16 px-6">
-      <h1 className="text-6xl font-bold text-center pt-6 mb-12 text-[#5C3C53]">Our Blog</h1>
+    <div className="min-h-screen bg-[#F5EDE0] py-20 px-6 sm:px-6 md:px-10">
+      <div className="text-center mb-8">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-2 pt-5 text-[#5C3C53]">
+          Blog
+        </h1>
+        <div className="w-20 h-1 bg-[#5C3C53] mx-auto rounded"></div>
+      </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {content.map((post) => (
@@ -29,7 +34,7 @@ const Blog = () => {
 
             <div className="p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-2">{post.TITLE}</h2>
-              <p className="text-[#1c2712] text-sm mb-4">{post.CONTENT}</p>
+              <p className="text-[#1c2712] text-sm md:text-base max-w-md mx-auto mb-4">{post.CONTENT}</p>
 
               <Link
                 to={`/blog/${post.ID}`}
