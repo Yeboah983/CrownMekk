@@ -35,7 +35,7 @@ const Contact = () => {
       {/* Intro */}
       <div className="flex flex-col items-center text-center pb-10">
       <div className="text-center mb-8">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-2 pt-5 text-[#5C3C53]">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-2 pt-16 text-[#5C3C53]">
           Contact Us
         </h1>
         <div className="w-20 h-1 bg-[#5C3C53] mx-auto rounded"></div>
@@ -48,7 +48,7 @@ const Contact = () => {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Contact Info */}
         <div className="w-full lg:w-[35vw] bg-[#5C3C53] text-white p-8 rounded-lg flex flex-col justify-between">
-          <h3 className="font-bold text-black text-2xl mb-6">Contact Information</h3>
+          <h3 className="font-bold text-white text-2xl mb-6">Contact Information</h3>
 
           <div className="flex flex-col gap-6 text-sm">
             <p className="flex gap-2 text-sm items-start">

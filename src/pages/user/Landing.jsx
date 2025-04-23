@@ -18,11 +18,12 @@ const LandingPage = () => {
     className="w-full relative bg-cover bg-center bg-no-repeat"
     style={{
       backgroundImage: `url(${landingContent.IMAGEURL})`,
-      minHeight: '500px', // 👈 Extend height for mobile here
+      minHeight: '550px', // 👈 Extend height for mobile here
     }}
   >
     {/* Dark overlay */}
-    <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
+    <div className="absolute inset-0 bg-black opacity-3
+    0 z-0"></div>
 
     {/* Content */}
     <div className="absolute inset-0 flex flex-col justify-between items-center text-white px-4 pb-8 pt-10 z-10">
