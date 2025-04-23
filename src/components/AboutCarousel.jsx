@@ -9,9 +9,14 @@ const AboutCarousel = ({ images }) => {
 
   return (
     <section className="bg-[#F3F4F6] py-10 px-4">
-      <h3 className="text-3xl text-[#5C3C53] md:text-4xl font-bold text-center mb-10">Explore More</h3>
+      <div className="flex flex-col items-center">
+              <h2 className="text-3xl text-[#5C3C53] font-bold text-center m-0 leading-none">
+                Explore More
+              </h2>
+              <div className="w-20 h-1 bg-[#5C3C53] mt-1 rounded"></div>
+            </div>
 
-      <div className="flex flex-wrap gap-6 justify-center px-1">
+      <div className="flex flex-wrap gap-6 justify-center px-1 pt-10">
         {(validImages.length ? validImages : [
           {
             LOGO: "https://placehold.co/100x100?text=BHB",

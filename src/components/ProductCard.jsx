@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
           {product.PRODUCTNAME}
         </h3>
 
-        <p className="text-sm text-[#41562B] mb-3">
+        <p className="text-sm md:text-base max-w-md mx-auto text-[#41562B] mb-3">
           {product.PRODUCTDESCRIPTION}
         </p>
 
