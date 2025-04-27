@@ -8,7 +8,7 @@ const AboutCarousel = ({ images }) => {
   console.log("Carousel images received:", validImages);
 
   return (
-    <section className="bg-[#F3F4F6] py-10 px-4">
+    <section className="bg-[#F5EDE0] py-10 px-4">
       <h3 className="text-3xl text-[#5C3C53] md:text-4xl font-bold text-center mb-10">Explore More</h3>
 
       <div className="flex flex-wrap gap-6 justify-center px-1">

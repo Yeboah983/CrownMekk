@@ -71,7 +71,7 @@ const About = () => {
 
       {/* SUMMARY SECTION */}
       {summary && (
-        <section className="py-16 px-6 bg-[#F3F4F6] text-[#5C3C53]">
+        <section className="py-16 px-6 bg-[#F5EDE0] text-[#5C3C53]">
           <div className="max-w-6xl mx-auto flex flex-col gap-8">
             <h2 className="text-3xl font-bold text-center">{summary.TITLE}</h2>
             <div className="flex flex-col md:flex-row gap-8 items-center">

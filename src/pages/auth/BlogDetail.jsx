@@ -16,7 +16,7 @@ const BlogDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#fdf9f6] py-16 px-6">
+    <div className="min-h-screen bg-[#F5EDE0] py-16 px-6">
       {/* Optional Image */}
       {/* {post.IMAGEURL && (
         <img

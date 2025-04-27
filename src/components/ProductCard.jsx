@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <div className="bg-[#f0c89c] rounded-2xl overflow-hidden shadow-md w-full">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-md w-full">
       {/* Top Image */}
       <img
         src={product.IMAGEURL}

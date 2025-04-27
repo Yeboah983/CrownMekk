@@ -56,7 +56,7 @@ const LandingPage = () => {
 
 
       {/* Featured Section */}
-      <section className="py-16 px-4 md:px-16 bg-gray-100">
+      <section className="py-16 px-4 md:px-16 bg-[#F5EDE0]">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">{mainHeading}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {featuredData.map((item, index) => (
