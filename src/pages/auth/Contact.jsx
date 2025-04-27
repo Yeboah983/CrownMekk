@@ -31,12 +31,17 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col px-4 py-10 lg:px-10 bg-[#F5EDE0]">
+    <div className="flex flex-col px-4 py-20 sm:px-6 md:px-10 lg:px-10 bg-[#F5EDE0]">
       {/* Intro */}
       <div className="flex flex-col items-center text-center pb-10">
-        <h1 className="text-2xl font-bold text-[#5C3C53] mb-2 pt-16">Contact Us</h1>
-        <p className="text-[#727272] mb-1">Have any questions or feedback? We’d love to hear from you.</p>
-        <p className="text-sm text-[#727272] font-medium">Available everyday – 24/7</p>
+      <div className="text-center mb-8">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-2 pt-16 text-[#5C3C53]">
+          Contact Us
+        </h1>
+        <div className="w-20 h-1 bg-[#5C3C53] mx-auto rounded"></div>
+      </div>
+        <p className="text-sm md:text-base max-w-md mx-auto text-[#727272]">Have any questions or feedback? We’d love to hear from you.</p>
+        <p className="text-sm md:text-base max-w-md mx-auto text-[#727272] font-medium">Available everyday – 24/7</p>
       </div>
 
       {/* Main layout */}
@@ -46,11 +51,11 @@ const Contact = () => {
           <h3 className="font-bold text-white text-2xl mb-6">Contact Information</h3>
 
           <div className="flex flex-col gap-6 text-sm">
-            <p className="flex gap-2 items-start">
+            <p className="flex gap-2 text-sm items-start">
               <LucidePhoneCall />
               <span>(+233) 505762889 / 249969499</span>
             </p>
-            <p className="flex items-start gap-2">
+            <p className="flex items-start text-sm gap-2">
               <MdOutlineMail className="text-xl" />
               <a
                 href="mailto:Millyedem25@gmail.com"
@@ -59,7 +64,7 @@ const Contact = () => {
                 Millyedem25@gmail.com
               </a>
             </p>
-            <p className="flex items-start gap-2">
+            <p className="flex text-sm items-start gap-2">
               <MdOutlineLocationOn className="text-xl" />
               <span>Ekus Pharmacy, Korle Bu New Station</span>
             </p>

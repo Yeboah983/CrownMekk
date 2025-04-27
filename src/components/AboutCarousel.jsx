@@ -9,9 +9,14 @@ const AboutCarousel = ({ images }) => {
 
   return (
     <section className="bg-[#F5EDE0] py-10 px-4">
-      <h3 className="text-3xl text-[#5C3C53] md:text-4xl font-bold text-center mb-10">Explore More</h3>
+      <div className="flex flex-col items-center">
+        <h3 className="text-3xl text-[#5C3C53] md:text-4xl font-bold text-center mb-2">
+          Explore More
+        </h3>
+        <div className="w-20 h-1 bg-[#5C3C53] mt-2 rounded"></div>
+      </div>
 
-      <div className="flex flex-wrap gap-6 justify-center px-1">
+      <div className="flex flex-wrap gap-6 justify-center px-1 pt-10">
         {(validImages.length ? validImages : [
           {
             LOGO: "https://placehold.co/100x100?text=BHB",
@@ -40,7 +45,7 @@ const AboutCarousel = ({ images }) => {
             >
               <div className="w-full flex flex-row items-start gap-4 mb-4">
                 <img
-                  src={item.LOGO ? item.LOGO : 'https://placehold.co/100x100?text=BHB'}
+                  src={item.LOGO || 'https://placehold.co/100x100?text=BHB'}
                   alt={`Logo ${index + 1}`}
                   className="w-16 h-16 object-contain rounded-full"
                 />
@@ -60,20 +65,23 @@ const AboutCarousel = ({ images }) => {
                 </div>
               )}
 
-              {item.TITLE === 'Benzura Herbal Balm' && extraBenefits.length > 0 && (
+              {extraBenefits.length > 0 && (
                 <div className="text-base text-gray-800 w-full mt-4">
-                  <h5 className="font-bold text-black mb-2">Skin & Wound Care</h5>
-                  {extraBenefits.map((text, i) => (
-                    <p key={`extra-${i}`} className="mb-2 leading-snug">{text}</p>
-                  ))}
-                </div>
-              )}
-
-              {item.TITLE !== 'Benzura Herbal Balm' && extraBenefits.length > 0 && (
-                <div className="text-base text-gray-800 w-full mt-4">
-                  {extraBenefits.map((text, i) => (
-                    <p key={`extra-${i}`} className="mb-2 leading-snug">{text}</p>
-                  ))}
+                  {item.TITLE === 'Benzura Herbal Balm' && (
+                    <>
+                      <h5 className="font-bold text-black mb-2">Skin & Wound Care</h5>
+                      {extraBenefits.map((text, i) => (
+                        <p key={`extra-${i}`} className="mb-2 leading-snug">{text}</p>
+                      ))}
+                    </>
+                  )}
+                  {item.TITLE !== 'Benzura Herbal Balm' && (
+                    <>
+                      {extraBenefits.map((text, i) => (
+                        <p key={`extra-${i}`} className="mb-2 leading-snug">{text}</p>
+                      ))}
+                    </>
+                  )}
                 </div>
               )}
             </div>
