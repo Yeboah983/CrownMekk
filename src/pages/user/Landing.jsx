@@ -56,7 +56,7 @@ const LandingPage = () => {
 
 
       {/* Featured Section */}
-      <section className="py-16 px-4 md:px-16 bg-gray-100">
+      <section className="py-16 px-4 md:px-16 bg-[#F5EDE0]">
       <div className="flex flex-col items-center">
               <h2 className="text-3xl text-[#5C3C53] font-bold text-center m-0 leading-none">
                 {mainHeading}

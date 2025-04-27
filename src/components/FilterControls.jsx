@@ -23,7 +23,7 @@ const FilterControls = ({
             onClick={() => onCategoryChange(cat)}
             className={`px-4 py-2 rounded-full text-sm font-medium border ${
               selectedCategory === cat
-                ? 'bg-[#85582F] text-white'
+                ? 'bg-[#5C3C53] text-white'
                 : 'bg-white text-gray-700'
             } hover:bg-[#5C3C53] hover:text-white transition`}
           >
