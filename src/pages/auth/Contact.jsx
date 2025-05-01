@@ -67,6 +67,8 @@ const Contact = () => {
             <p className="flex text-sm items-start gap-2">
               <MdOutlineLocationOn className="text-xl" />
               <span>Ekus Pharmacy, Korle Bu New Station</span>
+              <span>Peacock Pharmacy/Okaishie Druglane</span>
+              <span>Ankama Chemical store</span>
             </p>
           </div>
 
@@ -88,7 +90,7 @@ const Contact = () => {
               <Link to="https://www.linkedin.com/in/miss-millicent-edem-091970118" target="_blank" rel="noreferrer" className="bg-white text-[#5C3C53] rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#5C3C53] hover:text-white transition">
                 <FaLinkedin />
               </Link>
-              <Link to="https://www.tiktok.com/@findmekk888" target="_blank" rel="noreferrer" className="bg-white text-[#5C3C53] rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#5C3C53] hover:text-white transition">
+              <Link to="https://www.tiktok.com/@benzuraherbalproducts?_t=ZM-8vqBC4iUYRa&_r=1" target="_blank" rel="noreferrer" className="bg-white text-[#5C3C53] rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#5C3C53] hover:text-white transition">
                 <FaTiktok />
               </Link>
             </div>

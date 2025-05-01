@@ -38,7 +38,7 @@ const Footer = () => {
               { Icon: FaTwitter, href: "https://twitter.com" },
               { Icon: FaInstagram, href: "https://www.instagram.com/findmekk888?igsh=dDZycjJkZjJjd3Ri" },
               { Icon: FaLinkedin, href: "https://www.linkedin.com/in/miss-millicent-edem-091970118" },
-              { Icon: FaTiktok, href: "https://www.tiktok.com/@findmekk888?_t=ZM-8vPtuhbbss3&_r=1" }
+              { Icon: FaTiktok, href: "https://www.tiktok.com/@benzuraherbalproducts?_t=ZM-8vqBC4iUYRa&_r=1" }
             ].map(({ Icon, href }, index) => (
               <a
                 key={index}
