@@ -1,6 +1,7 @@
 import React from 'react';
 import useGoogleSheetData from '../../services/useGoogleSheetData'; 
 import { Link } from 'react-router';
+import TestimonialSection from '../auth/Testimonies';
 
 const LandingPage = () => {
   const { data: landingData, error: landingError } = useGoogleSheetData("LANDINGPAGE", "A1:G100");
@@ -87,6 +88,8 @@ const LandingPage = () => {
           ))}
         </div>
       </section>
+      <TestimonialSection />
+
     </div>
   );
 };
